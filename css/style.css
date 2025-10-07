@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,700&display=swap');
+
 :root {
     --preto-fundo: #0B3000;
     --preto-header-transparente: #373737;
@@ -5,21 +7,22 @@
     --laranja-acao: #f9cb9c;
     --cinza-servico: #434343; 
     --cor-texto-claro: #ffffff;
+    --cor-texto-cinza-claro: #E2DFDF;
     --borda-foco: #f0a34b;
     --espacamento-padrao: 1rem;
 }
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-size: 100%;
     line-height: 1.5;
     overflow-x: hidden;
-    color: var(--cor-texto-claro);
     background-color: var(--verde-escuro-quase-preto);
 }
 
@@ -40,29 +43,29 @@ a:focus, button:focus, .servico-card:focus {
 
 h1, h2, h3, h4 { margin-bottom: 0.5rem; }
 
-
-
 .redes-sociais {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-color: var(--preto-fundo);
     list-style: none;
-    display: flex;
     justify-content: center;
-    padding: 0.3rem 0;
-    gap: 1.5rem;
-    font-size: 0.8rem;
-    text-transform: uppercase;
+    padding: 2px;
+    gap: 15px;
+    color:#ffffff;
 }
-
 
 .main-header {
     background-color: var(--preto-header-transparente);
-    padding: var(--espacamento-padrao);
+    padding: 0 1rem;
+    height: 90px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: row; 
     align-items: center;
-    gap: 1rem;
+    gap: 15px;
     position: relative;
     z-index: 10;
+    color:#ffffff;
 }
 
 .logo-area, .menu-principal {
@@ -76,16 +79,17 @@ h1, h2, h3, h4 { margin-bottom: 0.5rem; }
     padding: 0;
     margin-right: 1rem;
 }
-.btn-alistar {
-    background-color: var(--laranja-acao);
-    color: var(--preto-fundo);
+.menu-principal-2 {
+    background-color: #F6B229;
+    color: #ffffff;
     padding: 0.5rem 1.5rem;
     border-radius: 4px;
+    height: 35px;
     font-weight: bold;
+    align-items: center;
     text-transform: uppercase;
     white-space: nowrap;
 }
-
 
 .hero-container {
     position: relative;
@@ -123,44 +127,60 @@ h1, h2, h3, h4 { margin-bottom: 0.5rem; }
 }
 h2 { 
     font-size: 1.2rem;
-    color: #f7941d;
+    color: #ffffff;
 }
 h3 { 
     font-size: 1.8rem; 
     margin-bottom: 3rem; 
 }
 
-
 .servicos-grid {
-    display: grid; 
-    grid-template-columns: 1fr; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    max-width: 900px;                     
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
 .servico-card {
     background-color: var(--cinza-servico);
-    padding: 2rem;
-    border-radius: 4px;
+    padding: 1rem 2rem;
+    border-radius: 6px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 120px;
-    transition: background-color 0.3s;
+    justify-content: center;  
+    align-items: center;       
+    text-align: center;        
+    height: 80px;                     
+    transition: background-color 0.3s, transform 0.2s;
 }
+
+.servico{
+    
+    justify-content: center;  
+    align-items: center;       
+    text-align: center; 
+
+    
+}
+
 .servico-card:hover {
     background-color: #555555;
+    transform: translateY(-3px);
 }
+
 .servico-card h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
+    color: var(--cor-texto-cinza-claro);
+    margin-bottom: 0.5rem;
 }
+
 .servico-card p {
     font-size: 0.9rem;
-    color: #cccccc;
+    color: #ffffff;
 }
+
 
 .main-footer {
     background-color: var(--preto-header-transparente);
@@ -189,10 +209,8 @@ h3 {
 
 @media (min-width: 768px) {
     .servicos-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+        grid-template-columns: repeat(2, 1fr); 
+        max-width: 900px;
     }
 }
 
@@ -211,11 +229,11 @@ h3 {
         align-items: center;
         gap: 1.5rem; 
     }
-    
+
     .servicos-grid {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
         max-width: 1000px;
-        gap: 1.5rem;
+        gap: 2rem;
     }
 
     .conteudo-banner {
